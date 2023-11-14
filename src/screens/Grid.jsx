@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAll } from "../services/actions";
-// import Thumbnail from "../components/Thumbnail";
+import Thumbnail from "../components/Thumbnail";
 
 function Grid() {
   const [thumbnails, setThumbnails] = useState([]);
