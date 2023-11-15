@@ -19,7 +19,7 @@ function NavBar() {
       <div className="right-section">
         <a href="#" className="nav-item">Sign in / Sign up</a>
         <div className="dropdown">
-          <button onClick={toggleBrowseMenu} className="nav-item browse-link">Browse ▼</button>
+          <button onClick={toggleBrowseMenu} className="browse-link">Browse ▼</button>
           {isBrowseOpen && (
             <div className="dropdown-content">
               <a href="#">Non-Fiction</a>
