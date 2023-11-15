@@ -53,6 +53,12 @@ font-size: 50px
 }
 
 
+.browse-link {
+  
+  background-color: transparent;
+  border: none;
+  
+}
 
 .dropdown {
   position: relative;
