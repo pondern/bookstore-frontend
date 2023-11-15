@@ -92,3 +92,25 @@ font-size: 50px
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/* BookScroll.css */
+
+/* Scrollable books container */
+.scrollable-books {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+/* Books container to display rows */
+.books-container {
+  display: flex;
+}
+
+/* Individual book styling */
+.book {
+  width: 200px; /* Adjust book width as needed */
+  height: 300px; /* Adjust book height as needed */
+  border: 1px solid #ccc;
+  margin-right: 10px; /* Adjust margin between books */
+}
+
