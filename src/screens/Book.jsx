@@ -1,26 +1,25 @@
 import { useState, useEffect } from "react";
-import { getBook } from "../services/actions";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { getBook } from "../services/books";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 function Book() {
   const [book, setBook] = useState({});
 
-  let { id } = useParams();
+  let { title } = useParams();
 
   useEffect(() => {
     fetchBook();
   }, []);
 
   async function fetchBook() {
-    const oneBook = await getBook(id);
+    const oneBook = await getBook(title);
     setBook(oneBook);
   }
 
   return (
     <div>
       <div className="single-book-view">
-        <img src={book.image} alt={book.title} />
+        <img src={book.book_image} alt={book.title} />
         <h1>{book.title}</h1>
         <p>{book.author}</p>
         <p>{book.publisher}</p>
