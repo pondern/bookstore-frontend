@@ -8,7 +8,9 @@ const getToken = () => {
 
 const api = axios.create({
   baseURL:
-    process.env.NODE_ENV === "production" ? "" : "http://localhost:3000/api",
+    process.env.NODE_ENV === "production"
+      ? "https://ga-bookstore-8724ed2991a2.herokuapp.com/"
+      : "http://localhost:3000/api",
 });
 
 api.interceptors.request.use(
