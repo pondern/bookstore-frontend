@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 function Thumbnail({ book }) {
+  console.log(book.display_name);
+
   return (
     <div className="thumbnail-container">
       <Link to={`/${book._id}`}>
