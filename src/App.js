@@ -1,6 +1,9 @@
-import React from 'react';
-import NavBar from './components/Nav.jsx'; 
-import "./App.css"
+import React from "react";
+import NavBar from "./components/Nav.jsx";
+import { Routes, Route } from "react-router-dom";
+import Grid from "./screens/Grid.jsx";
+import Book from "./screens/Book.jsx";
+import "./App.css";
 import Home from './screens/Home.jsx';
 
 
@@ -9,7 +12,10 @@ function App() {
     <div className="App">
       <NavBar />
       < Home />
-      {/* Other components and content */}
+      <Routes>
+        <Route path="/" element={<Grid />} />
+        <Route path="/:title" element={<Book />} />
+      </Routes>
     </div>
   );
 }
