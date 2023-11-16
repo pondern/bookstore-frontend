@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "../"; // Import your CSS file for styling
 
-function NavBar({ thumbnails, setFilteredThumbnails }) {
-  const navigate = useNavigate();
+
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
+
+function NavBar({ user, thumbnails, setFilteredThumbnails }) {
+   const navigate = useNavigate();
 
   const [searchTerm, setSearchTerm] = useState("");
   const [isBrowseOpen, setIsBrowseOpen] = useState(false);
@@ -60,6 +63,36 @@ function NavBar({ thumbnails, setFilteredThumbnails }) {
     navigate("/grid");
   };
 
+  const authenticatedOptions = (
+    <>
+      <NavLink className="link" to="/add-book">
+        Add Book
+      </NavLink>
+      <NavLink className="link" to="/sign-out">
+        Sign Out
+      </NavLink>
+    </>
+  );
+
+  const unauthenticatedOptions = (
+    <>
+      <NavLink className="link" to="/sign-up">
+        Sign Up
+      </NavLink>
+      <NavLink className="link" to="/sign-in">
+        Sign In
+      </NavLink>
+    </>
+  );
+
+  const alwaysOptions = (
+    <>
+      <NavLink className="link" to="/grid">
+        Books
+      </NavLink>
+    </>
+  );
+
   return (
     <nav className="navbar">
       <div className="left-section">
@@ -76,9 +109,9 @@ function NavBar({ thumbnails, setFilteredThumbnails }) {
         />
       </div>
       <div className="right-section">
-        <a href="#" className="nav-item">
-          Sign in / Sign up
-        </a>
+        {user && <div className="link welcome">Welcome, {user.username}</div>}
+        {alwaysOptions}
+        {user ? authenticatedOptions : unauthenticatedOptions}
         <div className="dropdown">
           <button onClick={toggleBrowseMenu} className="browse-link">
             Browse ▼
