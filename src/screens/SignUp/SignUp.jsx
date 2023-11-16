@@ -1,105 +1,105 @@
-import { useState } from 'react'
-import './SignUp.css'
-import { signUp } from '../../services/users'
-import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+import "./SignUp.css";
+import { signUp } from "../../services/users";
+import { useNavigate } from "react-router-dom";
 
-const SignUp = (props) => {
-  const navigate = useNavigate()
+const SignUp = ({ setUser }) => {
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    username: '',
-    email: '',
-    password: '',
-    passwordConfirmation: '',
+    username: "",
+    email: "",
+    password: "",
+    passwordConfirmation: "",
     isError: false,
-    errorMsg: '',
-  })
+    errorMsg: "",
+  });
 
-  const handleChange = (event) =>
+  const handleChange = (e) =>
     setForm({
       ...form,
-      [event.target.name]: event.target.value,
-    })
+      [e.target.name]: e.target.value,
+    });
 
-  const onSignUp = async (event) => {
-    event.preventDefault()
-    const { setUser } = props
+  const onSignUp = async (e) => {
+    e.preventDefault();
+
     try {
-      const user = await signUp(form)
-      setUser(user)
-      navigate('/')
+      const user = await signUp(form);
+      setUser(user);
+      navigate("/grid");
     } catch (error) {
-      console.error(error)
+      console.error(error);
       setForm({
-        username: '',
-        email: '',
-        password: '',
-        passwordConfirmation: '',
+        username: "",
+        email: "",
+        password: "",
+        passwordConfirmation: "",
         isError: true,
-        errorMsg: 'Sign Up Details Invalid',
-      })
+        errorMsg: "Sign Up Details Invalid",
+      });
     }
-  }
+  };
 
   const renderError = () => {
-    const toggleForm = form.isError ? 'danger' : ''
+    const toggleForm = form.isError ? "danger" : "";
     if (form.isError) {
       return (
-        <button type='submit' className={toggleForm}>
+        <button type="submit" className={toggleForm}>
           {form.errorMsg}
         </button>
-      )
+      );
     } else {
-      return <button type='submit'>Sign Up</button>
+      return <button type="submit">Sign Up</button>;
     }
-  }
+  };
 
-  const { username, email, password, passwordConfirmation } = form
+  const { username, email, password, passwordConfirmation } = form;
 
   return (
-    <div className='form-container'>
+    <div className="form-container">
       <h3>Sign Up</h3>
       <form onSubmit={onSignUp}>
         <label>Username</label>
         <input
           required
-          type='text'
-          name='username'
+          type="text"
+          name="username"
           value={username}
-          placeholder='Enter username'
+          placeholder="Enter username"
           onChange={handleChange}
         />
         <label>Email address</label>
         <input
           required
-          type='email'
-          name='email'
+          type="email"
+          name="email"
           value={email}
-          placeholder='Enter email'
+          placeholder="Enter email"
           onChange={handleChange}
         />
         <label>Password</label>
         <input
           required
-          name='password'
+          name="password"
           value={password}
-          type='password'
-          placeholder='Password'
+          type="password"
+          placeholder="Password"
           onChange={handleChange}
         />
         <label>Password Confirmation</label>
         <input
           required
-          name='passwordConfirmation'
+          name="passwordConfirmation"
           value={passwordConfirmation}
-          type='password'
-          placeholder='Confirm Password'
+          type="password"
+          placeholder="Confirm Password"
           onChange={handleChange}
         />
         {renderError()}
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;
