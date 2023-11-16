@@ -25,6 +25,7 @@ function NavBar() {
               <a href="#">Non-Fiction</a>
               <a href="#">Fiction</a>
               <a href='#'>Children's</a>
+              <a href='#'>Show All Books</a>
             </div>
           )}
         </div>
