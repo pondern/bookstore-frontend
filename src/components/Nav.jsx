@@ -1,15 +1,35 @@
+
+
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-// import "../"; // Import your CSS file for styling
 
 function NavBar({ user, thumbnails, setFilteredThumbnails }) {
+   const navigate = useNavigate();
+
   const [searchTerm, setSearchTerm] = useState("");
   const [isBrowseOpen, setIsBrowseOpen] = useState(false);
 
   const toggleBrowseMenu = () => {
     setIsBrowseOpen(!isBrowseOpen);
   };
+
+  /* make a helper function that does this 
+
+ setSearchTerm(term);
+
+    const results = thumbnails.filter(
+      (thumbnail) =>
+        thumbnail.title.toLowerCase().includes(term) ||
+        thumbnail.author.toLowerCase().includes(term) ||
+        thumbnail.display_name.toLowerCase().includes(term)
+    );
+
+    setFilteredThumbnails(results);
+
+    Then plug that in instead of the duplicated code inside of handleSearch and handleClick
+    */
 
   const handleSearch = (e) => {
     let term = e.target.value.toLowerCase();
@@ -23,6 +43,8 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
     );
 
     setFilteredThumbnails(results);
+
+    navigate("/grid");
   };
 
   const handleClick = (e) => {
@@ -37,6 +59,8 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
     );
 
     setFilteredThumbnails(results);
+
+    navigate("/grid");
   };
 
   const authenticatedOptions = (
