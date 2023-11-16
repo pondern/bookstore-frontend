@@ -99,14 +99,15 @@ font-size: 50px
 
 }
 
-.picture {
-  max-width: fit-content;
-  
-}
 
 .test {
-  padding: 100px;
+  padding: 300px;
   background-image:url("https://i0.wp.com/cms.babbel.news/wp-content/uploads/2022/01/Most_Beautiful_Libraries.png" );
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color:white;
+  
 }
   
 
