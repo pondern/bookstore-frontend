@@ -1,11 +1,40 @@
-import React, { useState } from 'react';
-import '../'; // Import your CSS file for styling
+import React, { useState } from "react";
+import "../"; // Import your CSS file for styling
 
-function NavBar() {
+function NavBar({ thumbnails, setFilteredThumbnails }) {
+  const [searchTerm, setSearchTerm] = useState("");
   const [isBrowseOpen, setIsBrowseOpen] = useState(false);
 
   const toggleBrowseMenu = () => {
     setIsBrowseOpen(!isBrowseOpen);
+  };
+
+  const handleSearch = (e) => {
+    let term = e.target.value.toLowerCase();
+    setSearchTerm(term);
+
+    const results = thumbnails.filter(
+      (thumbnail) =>
+        thumbnail.title.toLowerCase().includes(term) ||
+        thumbnail.author.toLowerCase().includes(term) ||
+        thumbnail.display_name.toLowerCase().includes(term)
+    );
+
+    setFilteredThumbnails(results);
+  };
+
+  const handleClick = (e) => {
+    let term = e.target.innerText.toLowerCase();
+    setSearchTerm(term);
+
+    const results = thumbnails.filter(
+      (thumbnail) =>
+        thumbnail.title.toLowerCase().includes(term) ||
+        thumbnail.author.toLowerCase().includes(term) ||
+        thumbnail.display_name.toLowerCase().includes(term)
+    );
+
+    setFilteredThumbnails(results);
   };
 
   return (
@@ -14,18 +43,34 @@ function NavBar() {
         <span className="Name">Bookstore</span>
       </div>
       <div className="middle-section">
-        <input type="text" placeholder="Search..." className="search-bar" />
+        <input
+          type="text"
+          placeholder="Search..."
+          className="search-bar"
+          value={searchTerm}
+          onChange={handleSearch}
+          name="Search"
+        />
       </div>
       <div className="right-section">
-        <a href="#" className="nav-item">Sign in / Sign up</a>
+        <a href="#" className="nav-item">
+          Sign in / Sign up
+        </a>
         <div className="dropdown">
-          <button onClick={toggleBrowseMenu} className="browse-link">Browse ▼</button>
+          <button onClick={toggleBrowseMenu} className="browse-link">
+            Browse ▼
+          </button>
           {isBrowseOpen && (
             <div className="dropdown-content">
-              <a href="#">Non-Fiction</a>
-              <a href="#">Fiction</a>
-              <a href='#'>Children's</a>
-              <a href='#'>Show All Books</a>
+              <p name="non-fiction" onClick={handleClick}>
+                Manga
+              </p>
+              <p name="fiction" onClick={handleClick}>
+                Fiction
+              </p>
+              <p name="children" onClick={handleClick}>
+                Children
+              </p>
             </div>
           )}
         </div>
