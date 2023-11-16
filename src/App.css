@@ -85,6 +85,11 @@ body {
   display: block;
 }
 
+.navbar {
+  position: sticky;
+  top: 0;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
