@@ -9,9 +9,9 @@ export const getBooks = async () => {
   }
 };
 
-export const getBook = async (id) => {
+export const getBook = async (title) => {
   try {
-    const response = await api.get(`/books/${id}`);
+    const response = await api.get(`/books/${title}`);
     return response.data;
   } catch (error) {
     throw error;
