@@ -1,24 +1,11 @@
-import { useState, useEffect } from "react";
-import { getBooks } from "../services/books";
 import Thumbnail from "../components/Thumbnail";
 
-function Grid() {
-  const [thumbnails, setThumbnails] = useState([]);
-
-  useEffect(() => {
-    fetchThumbnails();
-  }, []);
-
-  async function fetchThumbnails() {
-    const allThumbnails = await getBooks();
-    setThumbnails(allThumbnails);
-  }
-
+function Grid({ filteredThumbnails }) {
   return (
     <div>
       <h1>All the books!</h1>
       <div className="grid">
-        {thumbnails.map((book) => (
+        {filteredThumbnails.map((book) => (
           <Thumbnail book={book} />
         ))}
       </div>
