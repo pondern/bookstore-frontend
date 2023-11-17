@@ -14,6 +14,7 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
 
   const handleSearch = (e) => {
     let term = e.target.value.toLowerCase();
+    if (term === "fiction") term = " fiction";
     setSearchTerm(term);
 
     const results = thumbnails.filter(
@@ -30,6 +31,7 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
 
   const handleClick = (e) => {
     let term = e.target.innerText.toLowerCase();
+    if (term === "fiction") term = " fiction";
     setSearchTerm(term);
 
     const results = thumbnails.filter((thumbnail) =>
