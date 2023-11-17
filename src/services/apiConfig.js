@@ -9,7 +9,7 @@ const getToken = () => {
 const api = axios.create({
   baseURL:
     process.env.NODE_ENV === "production"
-      ? "https://ga-bookstore-8724ed2991a2.herokuapp.com/apiapi"
+      ? "https://ga-bookstore-8724ed2991a2.herokuapp.com/api"
       : "https://ga-bookstore-8724ed2991a2.herokuapp.com/api",
 });
 

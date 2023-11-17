@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { getBooks } from '../services/books.js';
-import Book from '../components/Book.jsx';
+import Book from '../components/BookScroll.jsx';
+import BookScroll from '../components/BookScroll.jsx';
 
 function Home() {
   const [books, setBooks] = useState([]);
+
+  //const fictionBooks = books.filter
+
 
   useEffect(() => {
     fetchBooks();
@@ -14,20 +18,17 @@ function Home() {
     setBooks(allBooks);
   }
 
+
+
+  
   return (
     <div>
       <div className="test">
         <h1>Welcome</h1>
       </div>
-      <div className="scrollable-books-container">
-        <div className="horizontal-scroll-container">
-          {books.slice(0, 10).map((book) => (
-            <div key={book.rank} className="book-item">
-              <Book book={book} />
-            </div>
-          ))}
-        </div>
-      </div>
+     <BookScroll books={books} />
+     
+
     </div>
   );
 }
