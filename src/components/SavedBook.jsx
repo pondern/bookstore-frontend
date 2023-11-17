@@ -1,10 +1,9 @@
-function SavedBook() {
+function SavedBook({ savedBook }) {
   return (
     <div>
-      {/* This is pseudocode: */}
-      <img src={"user.book.image"} alt={"user.book.title"} />
-      <p>{"user.book.stars"}</p>
-      <p>{"user.book.comment"}</p>
+      <img src={savedBook.book.book_image} alt={savedBook.book.title} />
+      <p>{savedBook.stars}</p>
+      <p>{savedBook.comment}</p>
     </div>
   );
 }
