@@ -43,12 +43,6 @@ function App() {
     setFilteredThumbnails(allThumbnails);
   }
 
-  // async function fetchLibrary() {
-  //   const userLibrary = await getLibrary(user?.id);
-  //   setLibrary(userLibrary);
-  //   console.log(userLibrary);
-  // }
-
   return (
     <div className="App">
       <NavBar

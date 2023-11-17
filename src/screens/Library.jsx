@@ -1,18 +1,9 @@
-import { useState, useEffect } from "react";
 import SavedBook from "../components/SavedBook";
-import { getLibrary } from "../services/libraries";
 
 function Library({ library }) {
-  // const [library, setLibrary] = useState([]);
-
-  // useEffect(() => {
-  //   fetchLibrary();
-  // }, []);
-
   return (
     <div>
       <h1>My Library</h1>
-      {/* <p>{userLibrary}</p> */}
       {/* <div className="lib-list">
         {savedBooks.map((savedBook) => (
           <SavedBook savedBook={savedBook} />
