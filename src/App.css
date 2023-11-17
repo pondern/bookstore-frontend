@@ -126,3 +126,24 @@ body {
   text-align: center;
   color: white;
 }
+
+/* Add this CSS to your stylesheet or use inline styles */
+.scrollable-books-container {
+  width: 60%;
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.horizontal-scroll-container {
+  display: flex;
+}
+
+.book-item {
+  margin-right: 20px; /* Adjust the spacing between books */
+  margin-top: 150px;
+}
+
+.book-image {
+  height: 250px;
+}
