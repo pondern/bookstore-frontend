@@ -48,6 +48,9 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
       <NavLink className="link" to="/add-book">
         Add Book
       </NavLink>
+      <NavLink className="link" to="/library">
+        My Library
+      </NavLink>
       <NavLink className="link" to="/sign-out">
         Sign Out
       </NavLink>
