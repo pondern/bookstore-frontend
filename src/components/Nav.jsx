@@ -45,9 +45,6 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
 
   const authenticatedOptions = (
     <>
-      <NavLink className="link" to="/add-book">
-        Add Book
-      </NavLink>
       <NavLink className="link" to="/library">
         My Library
       </NavLink>

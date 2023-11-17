@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { getBook } from "../services/books";
+import { getBook } from "../services/books.js";
+import { addBook } from "../services/libraries.js";
 import { Link, useParams } from "react-router-dom";
 
-function Book() {
+function Book({ user }) {
   const [book, setBook] = useState({});
 
   let { bookId } = useParams();
@@ -14,6 +15,12 @@ function Book() {
   async function fetchBook() {
     const oneBook = await getBook(bookId);
     setBook(oneBook);
+  }
+
+  async function handleClick() {
+    await addBook(user.id, bookId);
+    // [TBU] Make sure to add some user feedback
+    console.log("book added");
   }
 
   return (
@@ -32,9 +39,7 @@ function Book() {
         <Link path="">
           <button>Buy</button>
         </Link>
-        <Link path="">
-          <button>Add to Library</button>
-        </Link>
+        <button onClick={handleClick}>Add to Library</button>
       </div>
     </div>
   );

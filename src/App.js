@@ -17,7 +17,6 @@ function App() {
   const [user, setUser] = useState(null);
   const [thumbnails, setThumbnails] = useState([]);
   const [filteredThumbnails, setFilteredThumbnails] = useState([]);
-  const [library, setLibrary] = useState({});
 
   useEffect(() => {
     fetchUser();
@@ -26,15 +25,8 @@ function App() {
 
   async function fetchUser() {
     const userData = await verifyUser();
-    const userLibrary = await getLibrary(userData.id);
 
-    if (userData) {
-      setUser(userData);
-      setLibrary(userLibrary);
-    } else {
-      setUser(null);
-      setLibrary(null);
-    }
+    userData ? setUser(userData) : setUser(null);
   }
 
   async function fetchThumbnails() {
@@ -56,11 +48,11 @@ function App() {
           path="/grid"
           element={<Grid filteredThumbnails={filteredThumbnails} />}
         />
-        <Route path="/:bookId" element={<Book />} />
+        <Route path="/:bookId" element={<Book user={user} />} />
         <Route path="/sign-up" element={<SignUp setUser={setUser} />} />
         <Route path="/sign-in" element={<SignIn setUser={setUser} />} />
         <Route path="/sign-out" element={<SignOut setUser={setUser} />} />
-        <Route path="/library" element={<Library library={library} />} />
+        <Route path="/library" element={<Library user={user} />} />
       </Routes>
     </div>
   );
