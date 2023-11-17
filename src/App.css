@@ -51,6 +51,11 @@ body {
   color: white;
   font-size: 15px;
 }
+
+.link {
+  padding-right: 15px;
+}
+
 .browse-link {
   background-color: transparent;
   border: none;
@@ -224,4 +229,13 @@ body {
 .danger:hover {
   color: #f8f8f8;
   background: #af4448;
+}
+.savedBook {
+  display: flex;
+  border: 3px black;
+}
+
+.lib-img {
+  height: 200px;
+  display: block;
 }
