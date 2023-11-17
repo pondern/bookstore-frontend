@@ -25,18 +25,18 @@ export const removeBook = async (libraryId, bookReviewId) => {
     );
     return response.data;
   } catch (error) {
-    console.error(error);
+    throw error;
   }
 };
 
-export const editBookReview = async (libraryId, bookReviewId, params) => {
+export const editBookReview = async (libraryId, bookReviewId, reviewData) => {
   try {
     const response = await api.put(
       `/libraries/${libraryId}/bookReviewEdit/${bookReviewId}`,
-      params
+      reviewData
     );
     return response.data;
   } catch (error) {
-    console.error(error);
+    throw error;
   }
 };
