@@ -11,13 +11,6 @@ function Library({ library }) {
           <SavedBook savedBook={savedBook} />
         ))}
       </div>
-      {/* {savedBooks?.map((bookReview) => (
-        <div>
-          <img src={bookReview.book.book_image} alt={bookReview.book.title} />
-          <p>Stars: {bookReview.stars}</p>
-          <p>Comment: {bookReview.comment}</p>
-        </div>
-      ))} */}
     </div>
   );
 }
