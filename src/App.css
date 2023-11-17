@@ -50,6 +50,11 @@ body {
   color: white;
   font-size: 15px;
 }
+
+.link {
+  padding-right: 15px;
+}
+
 .browse-link {
   background-color: transparent;
   border: none;
@@ -146,4 +151,14 @@ body {
 
 .book-image {
   height: 250px;
+}
+
+.savedBook {
+  display: flex;
+  border: 3px black;
+}
+
+.lib-img {
+  height: 200px;
+  display: block;
 }
