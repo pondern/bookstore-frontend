@@ -22,7 +22,7 @@ function Home() {
       <div className="scrollable-books-container">
         <div className="horizontal-scroll-container">
           {books.slice(0, 10).map((book) => (
-            <div key={book.id} className="book-item">
+            <div key={book.rank} className="book-item">
               <Book book={book} />
             </div>
           ))}
