@@ -1,12 +1,9 @@
-
-
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-
 function NavBar({ user, thumbnails, setFilteredThumbnails }) {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [searchTerm, setSearchTerm] = useState("");
   const [isBrowseOpen, setIsBrowseOpen] = useState(false);
@@ -15,24 +12,9 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
     setIsBrowseOpen(!isBrowseOpen);
   };
 
-  /* make a helper function that does this 
-
- setSearchTerm(term);
-
-    const results = thumbnails.filter(
-      (thumbnail) =>
-        thumbnail.title.toLowerCase().includes(term) ||
-        thumbnail.author.toLowerCase().includes(term) ||
-        thumbnail.display_name.toLowerCase().includes(term)
-    );
-
-    setFilteredThumbnails(results);
-
-    Then plug that in instead of the duplicated code inside of handleSearch and handleClick
-    */
-
   const handleSearch = (e) => {
     let term = e.target.value.toLowerCase();
+    if (term === "fiction") term = " fiction";
     setSearchTerm(term);
 
     const results = thumbnails.filter(
@@ -49,13 +31,11 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
 
   const handleClick = (e) => {
     let term = e.target.innerText.toLowerCase();
+    if (term === "fiction") term = " fiction";
     setSearchTerm(term);
 
-    const results = thumbnails.filter(
-      (thumbnail) =>
-        thumbnail.title.toLowerCase().includes(term) ||
-        thumbnail.author.toLowerCase().includes(term) ||
-        thumbnail.display_name.toLowerCase().includes(term)
+    const results = thumbnails.filter((thumbnail) =>
+      thumbnail.display_name.toLowerCase().includes(term)
     );
 
     setFilteredThumbnails(results);
@@ -118,14 +98,29 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
           </button>
           {isBrowseOpen && (
             <div className="dropdown-content">
-              <p name="non-fiction" onClick={handleClick}>
-                Manga
-              </p>
               <p name="fiction" onClick={handleClick}>
                 Fiction
               </p>
+              <p name="nonfiction" onClick={handleClick}>
+                Nonfiction
+              </p>
+              <p name="young-adult" onClick={handleClick}>
+                Young Adult
+              </p>
+              <p name="manga" onClick={handleClick}>
+                Graphic Books and Manga
+              </p>
               <p name="children" onClick={handleClick}>
                 Children
+              </p>
+              <p name="business" onClick={handleClick}>
+                Business
+              </p>
+              <p name="mass-market" onClick={handleClick}>
+                Mass Market
+              </p>
+              <p name="miscellaneous" onClick={handleClick}>
+                Advice, How-To & Miscellaneous
               </p>
             </div>
           )}
