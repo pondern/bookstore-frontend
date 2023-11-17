@@ -1,12 +1,9 @@
-
-
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-
 function NavBar({ user, thumbnails, setFilteredThumbnails }) {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [searchTerm, setSearchTerm] = useState("");
   const [isBrowseOpen, setIsBrowseOpen] = useState(false);
@@ -14,22 +11,6 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
   const toggleBrowseMenu = () => {
     setIsBrowseOpen(!isBrowseOpen);
   };
-
-  /* make a helper function that does this 
-
- setSearchTerm(term);
-
-    const results = thumbnails.filter(
-      (thumbnail) =>
-        thumbnail.title.toLowerCase().includes(term) ||
-        thumbnail.author.toLowerCase().includes(term) ||
-        thumbnail.display_name.toLowerCase().includes(term)
-    );
-
-    setFilteredThumbnails(results);
-
-    Then plug that in instead of the duplicated code inside of handleSearch and handleClick
-    */
 
   const handleSearch = (e) => {
     let term = e.target.value.toLowerCase();
@@ -51,11 +32,8 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
     let term = e.target.innerText.toLowerCase();
     setSearchTerm(term);
 
-    const results = thumbnails.filter(
-      (thumbnail) =>
-        thumbnail.title.toLowerCase().includes(term) ||
-        thumbnail.author.toLowerCase().includes(term) ||
-        thumbnail.display_name.toLowerCase().includes(term)
+    const results = thumbnails.filter((thumbnail) =>
+      thumbnail.display_name.toLowerCase().includes(term)
     );
 
     setFilteredThumbnails(results);
