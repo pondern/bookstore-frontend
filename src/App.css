@@ -50,6 +50,11 @@ body {
   color: white;
   font-size: 15px;
 }
+
+.link {
+  padding-right: 15px;
+}
+
 .browse-link {
   background-color: transparent;
   border: none;
