@@ -9,6 +9,7 @@ import Book from "./screens/Book.jsx";
 import SignUp from "./screens/SignUp/SignUp.jsx";
 import SignIn from "./screens/SignIn/SignIn.jsx";
 import SignOut from "./screens/SignOut/SignOut.jsx";
+import Library from "./screens/Library.jsx";
 import "./App.css";
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         <Route path="/sign-up" element={<SignUp setUser={setUser} />} />
         <Route path="/sign-in" element={<SignIn setUser={setUser} />} />
         <Route path="/sign-out" element={<SignOut setUser={setUser} />} />
+        <Route path="/library" element={<Library setUser={setUser} />} />
       </Routes>
     </div>
   );
