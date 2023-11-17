@@ -98,14 +98,29 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
           </button>
           {isBrowseOpen && (
             <div className="dropdown-content">
-              <p name="non-fiction" onClick={handleClick}>
-                Manga
-              </p>
               <p name="fiction" onClick={handleClick}>
                 Fiction
               </p>
+              <p name="nonfiction" onClick={handleClick}>
+                Nonfiction
+              </p>
+              <p name="young-adult" onClick={handleClick}>
+                Young Adult
+              </p>
+              <p name="manga" onClick={handleClick}>
+                Graphic Books and Manga
+              </p>
               <p name="children" onClick={handleClick}>
                 Children
+              </p>
+              <p name="business" onClick={handleClick}>
+                Business
+              </p>
+              <p name="mass-market" onClick={handleClick}>
+                Mass Market
+              </p>
+              <p name="miscellaneous" onClick={handleClick}>
+                Advice, How-To & Miscellaneous
               </p>
             </div>
           )}
