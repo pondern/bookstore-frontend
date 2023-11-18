@@ -14,12 +14,14 @@ function Library({ user }) {
     setLibrary(userLibrary);
   }
 
+  console.log(library._id);
+
   return (
     <div>
       <h1>My Library</h1>
       <div className="lib-list">
         {library.books?.map((savedBook) => (
-          <SavedBook savedBook={savedBook} />
+          <SavedBook savedBook={savedBook} libId={library._id} />
         ))}
       </div>
     </div>
