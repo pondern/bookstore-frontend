@@ -7,7 +7,7 @@ function Library({ user }) {
 
   useEffect(() => {
     fetchLibrary();
-  });
+  }, []);
 
   async function fetchLibrary() {
     const userLibrary = await getLibrary(user.id);
