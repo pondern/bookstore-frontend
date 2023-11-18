@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { getBook } from "../services/books.js";
 import { addBook } from "../services/libraries.js";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 function Book({ user }) {
   const [book, setBook] = useState({});
+  const navigate = useNavigate();
 
   let { bookId } = useParams();
 
@@ -21,6 +22,8 @@ function Book({ user }) {
     await addBook(user.id, bookId);
     // [TBU] Make sure to add some user feedback
     console.log("book added");
+
+    navigate("/library");
   }
 
   return (
