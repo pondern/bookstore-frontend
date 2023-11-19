@@ -54,6 +54,7 @@ body {
 
 .link {
   padding-right: 15px;
+  color: white
 }
 
 .browse-link {
@@ -239,3 +240,4 @@ body {
   height: 200px;
   display: block;
 }
+
