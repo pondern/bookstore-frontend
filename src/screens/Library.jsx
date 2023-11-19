@@ -17,8 +17,6 @@ function Library({ user }) {
     setLibrary(userLibrary);
   }
 
-  console.log(library._id);
-
   async function handleClick() {
     console.log(`user.id = ${user.id}`);
     deleteUser(user.id);
