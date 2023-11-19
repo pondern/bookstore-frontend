@@ -1,14 +1,14 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Book({book}) {
+function Book({ book }) {
   return (
     <div>
-        <Link to = {`/books/${book._id}`}>
-            <img className='book-image' src={book.book_image}/> 
-        </Link>
+      <Link to={`/${book._id}`}>
+        <img className="book-image" src={book.book_image} />
+      </Link>
     </div>
-  )
+  );
 }
 
-export default Book
+export default Book;
