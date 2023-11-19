@@ -49,3 +49,12 @@ export const verifyUser = async () => {
   }
   return false;
 };
+
+export const deleteUser = async (userId) => {
+  try {
+    const response = await api.delete(`/users/${userId}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
