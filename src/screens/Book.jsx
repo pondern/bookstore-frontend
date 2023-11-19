@@ -18,12 +18,16 @@ function Book({ user }) {
     setBook(oneBook);
   }
 
-  async function handleClick() {
+  async function addToLibrary() {
     await addBook(user.id, bookId);
     // [TBU] Make sure to add some user feedback
     console.log("book added");
 
     navigate("/library");
+  }
+
+  function handleClick() {
+    user ? addToLibrary() : navigate("/sign-in");
   }
 
   return (
