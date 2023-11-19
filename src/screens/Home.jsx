@@ -6,7 +6,15 @@ import BookScroll from '../components/BookScroll.jsx';
 function Home() {
   const [books, setBooks] = useState([]);
 
-  //const fictionBooks = books.filter
+const fictionBooks = books.filter(
+ (book) =>
+ book.display_name.toLowerCase().includes("fiction") 
+)
+
+const mangaBooks = books.filter(
+  (book) =>
+  book.display_name.toLowerCase().includes("manga")
+)
 
 
   useEffect(() => {
@@ -26,8 +34,13 @@ function Home() {
       <div className="test">
         <h1>Welcome</h1>
       </div>
-     <BookScroll books={books} />
-     
+      <h2>Top Ranked</h2>
+     <BookScroll books={books}/>
+     <h3>Top Fiction</h3>
+     <BookScroll books={fictionBooks}/>
+     <h4>Top Manga</h4>
+     <BookScroll books={mangaBooks}/>
+    
 
     </div>
   );
