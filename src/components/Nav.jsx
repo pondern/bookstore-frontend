@@ -77,7 +77,7 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
     <nav className="navbar">
       <div className="left-section">
         <NavLink to="/">
-          <span className="Name">Bookstore</span>
+          <span className="Name">The Bookstore</span>
         </NavLink>
       </div>
       <div className="middle-section">
