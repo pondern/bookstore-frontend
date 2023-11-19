@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getLibrary } from "../services/libraries";
+import { deleteUser } from "../services/users";
 import SavedBook from "../components/SavedBook";
-import { signOut } from "../services/users";
 import { useNavigate } from "react-router-dom";
 
 function Library({ user }) {
@@ -20,6 +20,8 @@ function Library({ user }) {
   console.log(library._id);
 
   async function handleClick() {
+    console.log(`user.id = ${user.id}`);
+    deleteUser(user.id);
     navigate("/sign-out");
   }
 
