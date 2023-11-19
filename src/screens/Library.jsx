@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { getLibrary } from "../services/libraries";
 import SavedBook from "../components/SavedBook";
+import { signOut } from "../services/users";
+import { useNavigate } from "react-router-dom";
 
 function Library({ user }) {
   const [library, setLibrary] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchLibrary();
@@ -16,6 +19,10 @@ function Library({ user }) {
 
   console.log(library._id);
 
+  async function handleClick() {
+    navigate("/sign-out");
+  }
+
   return (
     <div>
       <h1>My Library</h1>
@@ -24,6 +31,7 @@ function Library({ user }) {
           <SavedBook savedBook={savedBook} libId={library._id} />
         ))}
       </div>
+      <button onClick={handleClick}>Delete My Account</button>
     </div>
   );
 }
