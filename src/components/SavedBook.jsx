@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactStars from "react-rating-stars-component";
-import { editBookReview } from "../services/libraries";
+import { editBookReview, removeBook } from "../services/libraries";
 
 function SavedBook({ savedBook, libId }) {
   const [review, setReview] = useState(savedBook.comment);
@@ -21,6 +21,12 @@ function SavedBook({ savedBook, libId }) {
   const handleChange = (e) => {
     setReview(e.target.value);
   };
+
+  async function handleClick() {
+    await removeBook(libId, savedBook._id);
+    // [TBU] Make sure to add some user feedback
+    console.log("book removed");
+  }
 
   return (
     <div className="savedBook">
@@ -52,6 +58,7 @@ function SavedBook({ savedBook, libId }) {
           <input type="submit" value="Submit" />
         </form>
         <p>{savedBook.comment}</p>
+        <button onClick={handleClick}>Remove from Library</button>
       </div>
     </div>
   );
