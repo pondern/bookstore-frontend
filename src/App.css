@@ -20,10 +20,7 @@ body {
 
 .Name {
   font-size: 50px;
-  color:white;
-  
-  
-
+  color: white;
 }
 
 .left-section {
@@ -57,7 +54,7 @@ body {
 
 .link {
   padding-right: 15px;
-  color: white
+  color: white;
 }
 
 .browse-link {
@@ -128,31 +125,27 @@ body {
   font-size: 50px;
 }
 
-
-
 .book-reviews-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color:lightblue;
+  background-color: lightblue;
 }
 
 .book-reviews {
   display: flex;
   justify-content: center;
-  flex-direction: row; 
+  flex-direction: row;
 }
-
-
 
 .book-1 {
   display: flex;
-  padding: 30px 150px 30px 30px
+  padding: 30px 150px 30px 30px;
 }
 
 .book-2 {
   display: flex;
-  padding: 30px 
+  padding: 30px;
 }
 
 .book-1 img {
@@ -168,7 +161,7 @@ body {
 .book-1-p {
   width: 190px;
   font-size: large;
-  border: #CED4DA solid 2px;
+  border: #ced4da solid 2px;
   padding: 50px 15px 20px 15px;
   margin: 50px 0px 0px 0px;
   background-color: white;
@@ -177,13 +170,11 @@ body {
 .book-2-p {
   width: 200px;
   font-size: large;
-  border: #CED4DA solid 2px;
+  border: #ced4da solid 2px;
   padding: 20px 15px 0px 15px;
   margin: 50px 0px 0px 0px;
   background-color: white;
 }
-
-
 
 .test {
   padding: 300px;
@@ -191,16 +182,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  color:ghostwhite; 
+  color: ghostwhite;
   font-size: 80px;
   text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  
-  
 }
-
-
-
-
 
 h2 {
   text-align: center;
@@ -209,25 +194,26 @@ h2 {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-
 h3 {
   text-align: center;
   font-size: 30px;
-  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue, 0 -1px lightblue;
+  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue,
+    0 -1px lightblue;
 }
 
 h4 {
   text-align: center;
   font-size: 30px;
-  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue, 0 -1px lightblue;
+  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue,
+    0 -1px lightblue;
 }
 
 h5 {
   text-align: center;
   font-size: 30px;
-  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue, 0 -1px lightblue;
+  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue,
+    0 -1px lightblue;
 }
-
 
 .scrollable-books-container {
   width: 60%;
@@ -336,3 +322,56 @@ h5 {
   display: block;
 }
 
+/* Modal CSS */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 35%;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.modal {
+  z-index: 100;
+  background: white;
+  position: relative;
+  margin: 1.75rem auto;
+  border-radius: 3px;
+  max-width: 500px;
+  padding: 2rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  opacity: 0.3;
+  cursor: pointer;
+  border: none;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+}
