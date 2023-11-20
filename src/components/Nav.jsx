@@ -32,6 +32,7 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
   const handleClick = (e) => {
     let term = e.target.innerText.toLowerCase();
     if (term === "fiction") term = " fiction";
+    if (term === "show all books") term = "";
     setSearchTerm(term);
 
     const results = thumbnails.filter((thumbnail) =>
@@ -100,6 +101,9 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
           </button>
           {isBrowseOpen && (
             <div className="dropdown-content">
+              <p name="all" onClick={handleClick}>
+                Show All Books
+              </p>
               <p name="fiction" onClick={handleClick}>
                 Fiction
               </p>
