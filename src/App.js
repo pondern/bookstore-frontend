@@ -18,6 +18,7 @@ function App() {
   const [thumbnails, setThumbnails] = useState([]);
   const [filteredThumbnails, setFilteredThumbnails] = useState([]);
   const [libraries, setLibraries] = useState([]);
+  const [gridHeading, setGridHeading] = useState("All the books!");
 
   useEffect(() => {
     fetchUser();
@@ -48,12 +49,18 @@ function App() {
         user={user}
         thumbnails={thumbnails}
         setFilteredThumbnails={setFilteredThumbnails}
+        setGridHeading={setGridHeading}
       />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
           path="/grid"
-          element={<Grid filteredThumbnails={filteredThumbnails} />}
+          element={
+            <Grid
+              filteredThumbnails={filteredThumbnails}
+              category={gridHeading}
+            />
+          }
         />
         <Route
           path="/:bookId"
