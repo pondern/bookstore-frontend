@@ -1,9 +1,9 @@
 import Thumbnail from "../components/Thumbnail";
 
-function Grid({ filteredThumbnails }) {
+function Grid({ filteredThumbnails, category }) {
   return (
     <div>
-      <h1>All the books</h1>
+      <h1>{category}</h1>
       <div className="grid">
         {filteredThumbnails.map((book) => (
           <Thumbnail book={book} />

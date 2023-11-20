@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function NavBar({ user, thumbnails, setFilteredThumbnails }) {
+function NavBar({ user, thumbnails, setFilteredThumbnails, setGridHeading }) {
   const navigate = useNavigate();
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,6 +16,9 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
     let term = e.target.value.toLowerCase();
     if (term === "fiction") term = " fiction";
     setSearchTerm(term);
+    term.length > 0
+      ? setGridHeading(`Search Results for "${term}"`)
+      : setGridHeading("All the books!");
 
     const results = thumbnails.filter(
       (thumbnail) =>
@@ -30,10 +33,15 @@ function NavBar({ user, thumbnails, setFilteredThumbnails }) {
   };
 
   const handleClick = (e) => {
-    let term = e.target.innerText.toLowerCase();
+    let heading = e.target.innerText;
+    let term = heading.toLowerCase();
     if (term === "fiction") term = " fiction";
-    if (term === "show all books") term = "";
-    setSearchTerm(term);
+    if (term === "show all books") {
+      term = "";
+      heading = "All the books!";
+    }
+
+    setGridHeading(heading);
 
     const results = thumbnails.filter((thumbnail) =>
       thumbnail.display_name.toLowerCase().includes(term)
