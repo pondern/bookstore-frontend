@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { signIn } from "../../services/users";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = ({ setUser }) => {
   const navigate = useNavigate();
@@ -76,7 +76,10 @@ const SignIn = ({ setUser }) => {
           onChange={handleChange}
         />
         {renderError()}
-        <a href="/sign-up">Create Account</a>
+        <Link className="btn" to="/sign-up"> 
+        <button>Create Account</button>
+        </Link>
+  
       </form>
     </div>
     </div>
