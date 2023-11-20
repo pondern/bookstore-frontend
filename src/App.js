@@ -23,7 +23,6 @@ function App() {
     fetchUser();
     fetchThumbnails();
     fetchLibraries();
-    document.body.className ="random"
   }, []);
 
   async function fetchUser() {

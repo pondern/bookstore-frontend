@@ -33,7 +33,7 @@ const mangaBooks = books.filter(
     <div>
       <div>
       <div className="test">
-        <h1>Welcome</h1>
+        <h7>Welcome</h7>
       </div>
       <div className='book-reviews-container'>
       <h2 className='staff-picks'>Staff Picks</h2>
