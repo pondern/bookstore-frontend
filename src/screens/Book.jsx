@@ -32,14 +32,16 @@ function Book({ user, libraries }) {
   }
 
   let rating = 0;
+  const reviews = [];
 
-  function printLibraries() {
+  function userFeedback() {
     let count = 0;
     let userStars = 0;
 
     libraries.forEach((library) => {
       library.books.forEach((libBook) => {
         if (libBook.book._id === bookId) {
+          reviews.push(libBook.comment);
           userStars += libBook.stars;
           count += 1;
         }
@@ -47,10 +49,10 @@ function Book({ user, libraries }) {
     });
 
     rating = userStars / count;
-    console.log(`rating = ${rating}`);
+    console.log(`average rating = ${rating}`);
   }
 
-  printLibraries();
+  userFeedback();
 
   return (
     <div>
@@ -80,6 +82,13 @@ function Book({ user, libraries }) {
           <button>Buy</button>
         </Link>
         <button onClick={handleClick}>Add to Library</button>
+      </div>
+      <div className="reviews">
+        <ul>
+          {reviews.map((review) => (
+            <li>{review}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
