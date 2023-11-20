@@ -242,7 +242,7 @@ h5 {
 }
 
 .book-item {
-  margin-right: 20px; /* Adjust the spacing between books */
+  margin-right: 20px; 
   margin-top: 150px;
 }
 
@@ -250,7 +250,7 @@ h5 {
   height: 250px;
 }
 
-/* Signin / Signup Screens */
+
 .form-container {
   align-self: center;
   padding: 1em;

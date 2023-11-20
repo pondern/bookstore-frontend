@@ -39,7 +39,7 @@ const mangaBooks = books.filter(
       <h2 className='staff-picks'>Staff Picks</h2>
       <div className='book-reviews'>
         <div className='book-1'>
-          <img
+            <img
             src='https://storage.googleapis.com/du-prd/books/images/9781974710027.jpg'
             alt='manga'
           />
