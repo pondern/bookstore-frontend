@@ -36,7 +36,7 @@ const mangaBooks = books.filter(
         <h1>Welcome</h1>
       </div>
       <div className='book-reviews-container'>
-      <h4 className='staff-picks'>Staff Picks</h4>
+      <h2 className='staff-picks'>Staff Picks</h2>
       <div className='book-reviews'>
         <div className='book-1'>
           <img
@@ -57,11 +57,11 @@ const mangaBooks = books.filter(
     </div>
       </div>
       <div>
-      <h2>Top Ranked</h2>
+      <h3>Top Ranked</h3>
      <BookScroll books={books}/>
-     <h3>Top Fiction</h3>
+     <h4>Top Fiction</h4>
      <BookScroll books={fictionBooks}/>
-     <h4>Top Manga</h4>
+     <h5>Top Manga</h5>
      <BookScroll books={mangaBooks}/>
     </div>
     </div>
