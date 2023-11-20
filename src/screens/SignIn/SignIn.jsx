@@ -76,7 +76,7 @@ const SignIn = ({ setUser }) => {
           onChange={handleChange}
         />
         {renderError()}
-        <Link className="btn" to="/sign-up"> 
+        <Link to="/sign-up"> 
         <button>Create Account</button>
         </Link>
   

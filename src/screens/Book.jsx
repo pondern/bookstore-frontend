@@ -56,17 +56,23 @@ function Book({ user, libraries }) {
   userFeedback();
 
   return (
-    <div>
+    <div className="detailContainer">
       <div className="single-book-view">
-        <img src={book?.book_image} alt={book?.title} />
-        <h1>{book?.title}</h1>
-        <p>{book?.author}</p>
-        <p>{book?.publisher}</p>
-        <p>{book?.date}</p>
-        <p>{book?.rank}</p>
-        <p>{book?.weeks}</p>
-        <p>{book?.description}</p>
-      </div>
+        <div className="flexCont">
+          <div className="bookImg">
+            <img src={book?.book_image} alt={book?.title} />
+          </div>
+          <div className="bookDetails">
+            <h1 className="bookTitle">{book?.title}</h1>
+            <p><strong>Author:</strong> {book?.author}</p>
+            <p><strong>Publisher:</strong> {book?.publisher}</p>
+            <p>{book?.date}</p>
+            <p><strong>Rank:</strong> {book?.rank}</p>
+            <p>{book?.weeks}</p>
+            <p><strong>Description:</strong> {book?.description}</p>
+          </div>
+        </div>
+      
       <ReactStars
         count={5}
         size={24}
@@ -79,8 +85,8 @@ function Book({ user, libraries }) {
         activeColor="#ffd700"
       />
       <div className="book-view-buttons">
-        <button onClick={() => setModal(true)}>Buy</button>
-        <button onClick={handleClick}>Add to Library</button>
+        <button className="btn" onClick={() => setModal(true)}>Buy</button>
+        <button className="btn" onClick={handleClick}>Add to Library</button>
       </div>
       <div className="reviews">
         <ul>
@@ -88,6 +94,7 @@ function Book({ user, libraries }) {
             <li>{review}</li>
           ))}
         </ul>
+      </div>
       </div>
       {modal && (
         <div>
@@ -118,3 +125,6 @@ function Book({ user, libraries }) {
 }
 
 export default Book;
+
+
+
