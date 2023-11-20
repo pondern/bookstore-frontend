@@ -362,8 +362,8 @@ h5 {
   position: relative;
   margin: 1.75rem auto;
   border-radius: 3px;
-  max-width: 500px;
-  padding: 2rem;
+  max-width: 24%;
+  padding: 1rem;
 }
 
 .modal-header {
@@ -384,6 +384,10 @@ h5 {
 .links-container {
   display: flex;
   flex-direction: column;
+}
+
+.links-container a {
+  padding: 8px;
 }
 
 h1 {
