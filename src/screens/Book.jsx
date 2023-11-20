@@ -6,6 +6,7 @@ import ReactStars from "react-rating-stars-component";
 
 function Book({ user, libraries }) {
   const [book, setBook] = useState({});
+  const [modal, setModal] = useState(false);
   const navigate = useNavigate();
 
   let { bookId } = useParams();
@@ -78,9 +79,7 @@ function Book({ user, libraries }) {
         activeColor="#ffd700"
       />
       <div className="book-view-buttons">
-        <Link path="">
-          <button>Buy</button>
-        </Link>
+        <button onClick={() => setModal(true)}>Buy</button>
         <button onClick={handleClick}>Add to Library</button>
       </div>
       <div className="reviews">
@@ -90,6 +89,30 @@ function Book({ user, libraries }) {
           ))}
         </ul>
       </div>
+      {modal && (
+        <div>
+          <div className="modal-overlay" />
+          <div className="modal-wrapper">
+            <div className="modal">
+              <div className="modal-header">
+                <button
+                  className="modal-close-button"
+                  onClick={() => setModal(false)}
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="links-container">
+                {book?.buy_links.map((buy_link) => (
+                  <a href={buy_link.url} target="_blank">
+                    {buy_link.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
