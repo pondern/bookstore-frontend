@@ -39,7 +39,7 @@ const mangaBooks = books.filter(
       <h2 className='staff-picks'>Staff Picks</h2>
       <div className='book-reviews'>
         <div className='book-1'>
-          <Link to="/6558d4480a451d6d0511b06a">
+          <Link to="/655668c407f62b913b6cb523">
             <img 
             src='https://storage.googleapis.com/du-prd/books/images/9781974710027.jpg'
             alt='manga'
@@ -48,7 +48,7 @@ const mangaBooks = books.filter(
         </div>
 
         <div className='book-2'>
-        <Link to="/6558d4480a451d6d0511af44">
+        <Link to="/655668c407f62b913b6cb3fd">
           <img
             src='https://storage.googleapis.com/du-prd/books/images/9781423131892.jpg'
             alt='children'
