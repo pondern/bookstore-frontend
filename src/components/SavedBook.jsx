@@ -18,7 +18,6 @@ function SavedBook({ savedBook, libId }) {
     console.log("Submitted Review:", review);
     // Optionally, you can reset the form after submission
     setReview("");
-    navigate("/");
   };
 
   const handleChange = (e) => {
@@ -27,7 +26,6 @@ function SavedBook({ savedBook, libId }) {
 
   async function handleClick() {
     await removeBook(libId, savedBook._id);
-    navigate("/");
     console.log("book removed");
   }
 
