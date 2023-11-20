@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { getBook } from "../services/books.js";
 import { addBook } from "../services/libraries.js";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 
-function Book({ user }) {
+function Book({ user, libraries }) {
   const [book, setBook] = useState({});
   const navigate = useNavigate();
 
@@ -30,6 +31,27 @@ function Book({ user }) {
     user ? addToLibrary() : navigate("/sign-in");
   }
 
+  let rating = 0;
+
+  function printLibraries() {
+    let count = 0;
+    let userStars = 0;
+
+    libraries.forEach((library) => {
+      library.books.forEach((libBook) => {
+        if (libBook.book._id === bookId) {
+          userStars += libBook.stars;
+          count += 1;
+        }
+      });
+    });
+
+    rating = userStars / count;
+    console.log(`rating = ${rating}`);
+  }
+
+  printLibraries();
+
   return (
     <div>
       <div className="single-book-view">
@@ -42,6 +64,17 @@ function Book({ user }) {
         <p>{book?.weeks}</p>
         <p>{book?.description}</p>
       </div>
+      <ReactStars
+        count={5}
+        size={24}
+        isHalf={true}
+        edit={false}
+        value={rating}
+        emptyIcon={<i className="far fa-star"></i>}
+        halfIcon={<i className="fa fa-star-half-alt"></i>}
+        fullIcon={<i className="fa fa-star"></i>}
+        activeColor="#ffd700"
+      />
       <div className="book-view-buttons">
         <Link path="">
           <button>Buy</button>
