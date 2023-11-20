@@ -43,6 +43,7 @@ function Library({ user }) {
               key={savedBook._id}
               savedBook={savedBook}
               libId={library._id}
+              fetchLibrary={fetchLibrary}
             />
           ))}
         </div>
