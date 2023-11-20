@@ -14,6 +14,13 @@ body {
   background-color: white;
 }
 
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-image: url("https://basecamplive.com/wp-content/uploads/2023/02/books.jpeg");
+}
 
 .navbar {
   display: flex;
@@ -188,11 +195,12 @@ body {
   background-image: url("https://i0.wp.com/cms.babbel.news/wp-content/uploads/2022/01/Most_Beautiful_Libraries.png");
   background-repeat: no-repeat;
   background-size: cover;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   color: ghostwhite;
-  font-size: 80px;
   text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
 
 h2 {
   text-align: center;
@@ -205,23 +213,28 @@ h3 {
   text-align: center;
   font-size: 30px;
   text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue,
-    0 -1px lightblue;
+  0 -1px lightblue;
 }
 
 h4 {
   text-align: center;
   font-size: 30px;
   text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue,
-    0 -1px lightblue;
+  0 -1px lightblue;
 }
 
 h5 {
   text-align: center;
   font-size: 30px;
   text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue,
-    0 -1px lightblue;
+  0 -1px lightblue;
 }
 
+.title {
+  font-size: 150px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
 .scrollable-books-container {
   width: 60%;
   margin: 0 auto;
@@ -255,12 +268,15 @@ h5 {
   /* align-self: center; */
   padding: 1em;
   width: 50%;
-  height: 80%;
-  margin: 4em auto;
+  height: 50%;
+  /* margin: 2em auto; */
   border: 2px solid #b0bec5;
   border-radius: 6px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
+  z-index: 2;
+  backdrop-filter: blur(.3rem)
+
 }
 
 .form-container .danger {
@@ -315,6 +331,7 @@ h5 {
 
 .form-container form label {
   margin-top: 0.6em;
+  color: white
 }
 
 .danger {

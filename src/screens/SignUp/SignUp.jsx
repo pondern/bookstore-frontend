@@ -56,6 +56,7 @@ const SignUp = ({ setUser }) => {
   const { username, email, password, passwordConfirmation } = form;
 
   return (
+    <div className="pageContainer">
     <div className="form-container">
       <h3>Sign Up</h3>
       <form onSubmit={onSignUp}>
@@ -97,6 +98,7 @@ const SignUp = ({ setUser }) => {
         />
         {renderError()}
       </form>
+    </div>
     </div>
   );
 };
