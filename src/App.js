@@ -23,6 +23,7 @@ function App() {
     fetchUser();
     fetchThumbnails();
     fetchLibraries();
+    document.body.className ="random"
   }, []);
 
   async function fetchUser() {
@@ -67,7 +68,11 @@ function App() {
         />
         <Route
           path="/library"
-          element={user ? <Library user={user} /> : null}
+          element={
+            user ? (
+              <Library user={user} fetchLibraries={fetchLibraries} />
+            ) : null
+          }
         />
       </Routes>
     </div>

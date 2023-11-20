@@ -4,7 +4,7 @@ import { deleteUser } from "../services/users";
 import SavedBook from "../components/SavedBook";
 import { useNavigate } from "react-router-dom";
 
-function Library({ user }) {
+function Library({ user, fetchLibraries }) {
   const [library, setLibrary] = useState({});
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -43,6 +43,8 @@ function Library({ user }) {
               key={savedBook._id}
               savedBook={savedBook}
               libId={library._id}
+              fetchLibrary={fetchLibrary}
+              fetchLibraries={fetchLibraries}
             />
           ))}
         </div>
