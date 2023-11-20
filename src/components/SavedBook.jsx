@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { editBookReview, removeBook } from "../services/libraries";
 
 function SavedBook({ savedBook, libId, fetchLibrary, fetchLibraries }) {
   const [review, setReview] = useState(savedBook.comment);
-  const navigate = useNavigate();
 
   const ratingChanged = (newRating) => {
     editBookReview(libId, savedBook._id, { stars: newRating });
     fetchLibraries();
   };
+
+  let prompt = "Leave a review:";
+
+  if (savedBook.comment) {
+    prompt = "Edit your review:";
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +22,7 @@ function SavedBook({ savedBook, libId, fetchLibrary, fetchLibraries }) {
     editBookReview(libId, savedBook._id, { comment: review });
     console.log("Submitted Review:", review);
     // Optionally, you can reset the form after submission
-    setReview("");
+    setReview(review);
     fetchLibrary();
     fetchLibraries();
   };
@@ -52,7 +56,7 @@ function SavedBook({ savedBook, libId, fetchLibrary, fetchLibraries }) {
       <div>
         <form onSubmit={handleSubmit}>
           <label>
-            Leave a review:
+            {prompt}
             <input
               type="text"
               name="review"
