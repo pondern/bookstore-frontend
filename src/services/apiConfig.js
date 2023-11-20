@@ -10,7 +10,7 @@ const api = axios.create({
   baseURL:
     process.env.NODE_ENV === "production"
       ? "https://ga-bookstore-8724ed2991a2.herokuapp.com/apiapi"
-      : "localhost:3000/api",
+      : "https://ga-bookstore-8724ed2991a2.herokuapp.com/api",
 });
 
 api.interceptors.request.use(
