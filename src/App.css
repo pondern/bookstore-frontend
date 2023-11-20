@@ -227,16 +227,19 @@ h5 {
   margin: 0 auto;
   overflow-x: auto;
   white-space: nowrap;
-  height: 300px;
+  
+  /* height: 300px; */
 }
 
 .horizontal-scroll-container {
   display: flex;
+  align-items: center;
+  justify-self: center;
 }
 
 .book-item {
   margin-right: 20px; 
-  margin-top: 150px;
+  margin-top: 20px;
 }
 
 .book-image {
@@ -390,10 +393,10 @@ h5 {
   padding: 8px;
 }
 
-h1 {
+/* h1 {
 text-align: center;
 font-size: 50px;
 text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue,
 0 -1px lightblue;;
-}
+} */
 
