@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
-import { getLibrary, deleteLibrary } from "../services/libraries";
+import React, { useState, useEffect } from "react";
+import { getLibrary } from "../services/libraries";
 import { deleteUser } from "../services/users";
 import SavedBook from "../components/SavedBook";
 import { useNavigate } from "react-router-dom";
 
 function Library({ user }) {
   const [library, setLibrary] = useState({});
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,24 +14,39 @@ function Library({ user }) {
   }, []);
 
   async function fetchLibrary() {
-    const userLibrary = await getLibrary(user.id);
-    setLibrary(userLibrary);
+    try {
+      const userLibrary = await getLibrary(user.id);
+
+      setLibrary(userLibrary);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching library:", error);
+      setLoading(false);
+    }
   }
 
   async function handleClick() {
+    console.log(`user.id = ${user.id}`);
     deleteUser(user.id);
-    deleteLibrary(library._id);
     navigate("/sign-out");
   }
 
   return (
     <div>
       <h1>My Library</h1>
-      <div className="lib-list">
-        {library.books?.map((savedBook) => (
-          <SavedBook savedBook={savedBook} libId={library._id} />
-        ))}
-      </div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="lib-list">
+          {library.books?.map((savedBook) => (
+            <SavedBook
+              key={savedBook._id}
+              savedBook={savedBook}
+              libId={library._id}
+            />
+          ))}
+        </div>
+      )}
       <button onClick={handleClick}>Delete My Account</button>
     </div>
   );

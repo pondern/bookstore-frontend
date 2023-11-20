@@ -61,8 +61,14 @@ function App() {
         />
         <Route path="/sign-up" element={<SignUp setUser={setUser} />} />
         <Route path="/sign-in" element={<SignIn setUser={setUser} />} />
-        <Route path="/sign-out" element={<SignOut setUser={setUser} />} />
-        <Route path="/library" element={<Library user={user} />} />
+        <Route
+          path="/sign-out"
+          element={user ? <SignOut setUser={setUser} /> : null}
+        />
+        <Route
+          path="/library"
+          element={user ? <Library user={user} /> : null}
+        />
       </Routes>
     </div>
   );
