@@ -40,7 +40,7 @@ function NavBar({ user, thumbnails, setFilteredThumbnails, setGridHeading }) {
       term = "";
       heading = "All the books!";
     }
-    setSearchTerm(term);
+
     setGridHeading(heading);
 
     const results = thumbnails.filter((thumbnail) =>
