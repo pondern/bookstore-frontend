@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { editBookReview, removeBook } from "../services/libraries";
 
-function SavedBook({ savedBook, libId }) {
+function SavedBook({ savedBook, libId, fetchLibrary, fetchLibraries }) {
   const [review, setReview] = useState(savedBook.comment);
   const navigate = useNavigate();
 
   const ratingChanged = (newRating) => {
     editBookReview(libId, savedBook._id, { stars: newRating });
+    fetchLibraries();
   };
 
   const handleSubmit = (e) => {
@@ -18,7 +19,8 @@ function SavedBook({ savedBook, libId }) {
     console.log("Submitted Review:", review);
     // Optionally, you can reset the form after submission
     setReview("");
-    navigate("/");
+    fetchLibrary();
+    fetchLibraries();
   };
 
   const handleChange = (e) => {
@@ -27,7 +29,7 @@ function SavedBook({ savedBook, libId }) {
 
   async function handleClick() {
     await removeBook(libId, savedBook._id);
-    navigate("/");
+    fetchLibrary();
     console.log("book removed");
   }
 
