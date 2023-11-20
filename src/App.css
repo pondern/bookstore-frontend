@@ -21,9 +21,6 @@ body {
 .Name {
   font-size: 50px;
   color:white;
-  
-  
-
 }
 
 .left-section {
@@ -128,113 +125,21 @@ body {
   font-size: 50px;
 }
 
-
-
-.book-reviews-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color:lightblue;
-}
-
-.book-reviews {
-  display: flex;
-  justify-content: center;
-  flex-direction: row; 
-}
-
-
-
-.book-1 {
-  display: flex;
-  padding: 30px 150px 30px 30px
-}
-
-.book-2 {
-  display: flex;
-  padding: 30px 
-}
-
-.book-1 img {
-  width: 200px;
-  height: 300px;
-}
-
-.book-2 img {
-  width: 200px;
-  height: 300px;
-}
-
-.book-1-p {
-  width: 190px;
-  font-size: large;
-  border: #CED4DA solid 2px;
-  padding: 50px 15px 20px 15px;
-  margin: 50px 0px 0px 0px;
-  background-color: white;
-}
-
-.book-2-p {
-  width: 200px;
-  font-size: large;
-  border: #CED4DA solid 2px;
-  padding: 20px 15px 0px 15px;
-  margin: 50px 0px 0px 0px;
-  background-color: white;
-}
-
-
-
 .test {
   padding: 300px;
   background-image: url("https://i0.wp.com/cms.babbel.news/wp-content/uploads/2022/01/Most_Beautiful_Libraries.png");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  color:ghostwhite; 
-  font-size: 80px;
-  text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  
-  
-}
-
-
-
-
-
-h2 {
-  text-align: center;
-  font-size: 30px;
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-
-h3 {
-  text-align: center;
-  font-size: 30px;
-  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue, 0 -1px lightblue;
-}
-
-h4 {
-  text-align: center;
-  font-size: 30px;
-  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue, 0 -1px lightblue;
-}
-
-h5 {
-  text-align: center;
-  font-size: 30px;
-  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue, 0 -1px lightblue;
-}
-
-
+/* Add this CSS to your stylesheet or use inline styles */
 .scrollable-books-container {
   width: 60%;
   margin: 0 auto;
   overflow-x: auto;
   white-space: nowrap;
-  height: 300px;
 }
 
 .horizontal-scroll-container {
@@ -336,3 +241,187 @@ h5 {
   display: block;
 }
 
+/* ... (Your existing code) ... */
+
+/* Media queries for tablets and mobile devices */
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  .navbar {
+    padding: 15px;
+  }
+
+  .Name {
+    font-size: 24px;
+  }
+
+  .search-bar {
+    width: 80%;
+  }
+
+  .nav-item,
+  .link,
+  .browse-link {
+    font-size: 14px;
+  }
+
+  .thumbnail-container {
+    height: 150px;
+    width: 150px;
+    margin: 5px;
+  }
+
+  .thumbnail-image {
+    height: 150px;
+  }
+
+  .home {
+    font-size: 24px;
+  }
+
+  .test {
+    padding: 100px;
+  }
+
+  .scrollable-books-container,
+  .form-container {
+    width: 90%;
+  }
+
+  .book-item {
+    margin-right: 10px;
+    margin-top: 100px;
+  }
+
+  .form-container form input {
+    font-size: 14px;
+  }
+
+  .lib-img {
+    height: 150px;
+  }
+}
+
+/* Media queries for laptops */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .navbar {
+    padding: 25px;
+  }
+
+  .Name {
+    font-size: 30px;
+  }
+
+  .search-bar {
+    width: 80%;
+  }
+
+  .nav-item,
+  .link,
+  .browse-link {
+    font-size: 20px;
+  }
+
+  .thumbnail-container {
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+  }
+
+  .thumbnail-image {
+    height: 200px;
+  }
+
+  .home {
+    font-size: 30px;
+  }
+
+  .test {
+    padding: 150px;
+  }
+
+  .scrollable-books-container,
+  .form-container {
+    width: 90%;
+  }
+
+  .book-item {
+    margin-right: 15px;
+    margin-top: 120px;
+  }
+
+  .form-container form input {
+    font-size: 18px;
+  }
+
+  .lib-img {
+    height: 180px;
+  }
+}
+
+/* Media queries for iPhones */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+
+  .Name {
+    font-size: 18px;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+
+  .nav-item,
+  .link,
+  .browse-link {
+    font-size: 12px;
+  }
+
+  .thumbnail-container {
+    height: 120px;
+    width: 120px;
+    margin: 5px;
+  }
+
+  .thumbnail-image {
+    height: 120px;
+  }
+
+  .home {
+    font-size: 18px;
+  }
+
+  .test {
+    padding: 50px;
+  }
+
+  .scrollable-books-container,
+  .form-container {
+    width: 95%;
+  }
+
+  .book-item {
+    margin-right: 10px;
+    margin-top: 80px;
+  }
+
+  .form-container form input {
+    font-size: 14px;
+  }
+
+  .lib-img {
+    height: 100px;
+  }
+}
