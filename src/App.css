@@ -21,6 +21,8 @@ body {
 .Name {
   font-size: 50px;
   color:white;
+  
+
 }
 
 .left-section {
@@ -125,6 +127,68 @@ body {
   font-size: 50px;
 }
 
+/* h5 {
+    display: block;
+    margin: 20px;
+    font-size: 25px;
+    text-align: center;
+} */
+
+.book-reviews-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color:lightblue;
+}
+
+.book-reviews {
+  display: flex;
+  justify-content: center;
+  flex-direction: row; 
+}
+
+
+
+.book-1 {
+  display: flex;
+  padding: 30px 150px 30px 30px
+}
+
+.book-2 {
+  display: flex;
+  padding: 30px 
+}
+
+.book-1 img {
+  width: 200px;
+  height: 300px;
+}
+
+.book-2 img {
+  width: 200px;
+  height: 300px;
+}
+
+.book-1-p {
+  width: 190px;
+  font-size: large;
+  border: #CED4DA solid 2px;
+  padding: 50px 15px 20px 15px;
+  margin: 50px 0px 0px 0px;
+  background-color: white;
+}
+
+.book-2-p {
+  width: 200px;
+  font-size: large;
+  border: #CED4DA solid 2px;
+  padding: 20px 15px 0px 15px;
+  margin: 50px 0px 0px 0px;
+  background-color: white;
+}
+
+
+
 .test {
   padding: 300px;
   background-image: url("https://i0.wp.com/cms.babbel.news/wp-content/uploads/2022/01/Most_Beautiful_Libraries.png");
@@ -134,12 +198,28 @@ body {
   color: white;
 }
 
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 30px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 30px;
+}
+
 /* Add this CSS to your stylesheet or use inline styles */
 .scrollable-books-container {
   width: 60%;
   margin: 0 auto;
   overflow-x: auto;
   white-space: nowrap;
+  height: 300px;
 }
 
 .horizontal-scroll-container {
