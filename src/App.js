@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { getBooks } from "./services/books.js";
 import { verifyUser } from "./services/users.js";
-import { getLibrary } from "./services/libraries.js";
+import { getAllLibraries } from "./services/libraries.js";
 import NavBar from "./components/Nav.jsx";
 import Home from "./screens/Home.jsx";
 import Grid from "./screens/Grid.jsx";
@@ -17,10 +17,12 @@ function App() {
   const [user, setUser] = useState(null);
   const [thumbnails, setThumbnails] = useState([]);
   const [filteredThumbnails, setFilteredThumbnails] = useState([]);
+  const [libraries, setLibraries] = useState([]);
 
   useEffect(() => {
     fetchUser();
     fetchThumbnails();
+    fetchLibraries();
   }, []);
 
   async function fetchUser() {
@@ -33,6 +35,11 @@ function App() {
     const allThumbnails = await getBooks();
     setThumbnails(allThumbnails);
     setFilteredThumbnails(allThumbnails);
+  }
+
+  async function fetchLibraries() {
+    const allLibraries = await getAllLibraries();
+    setLibraries(allLibraries);
   }
 
   return (
@@ -48,7 +55,10 @@ function App() {
           path="/grid"
           element={<Grid filteredThumbnails={filteredThumbnails} />}
         />
-        <Route path="/:bookId" element={<Book user={user} />} />
+        <Route
+          path="/:bookId"
+          element={<Book user={user} libraries={libraries} />}
+        />
         <Route path="/sign-up" element={<SignUp setUser={setUser} />} />
         <Route path="/sign-in" element={<SignIn setUser={setUser} />} />
         <Route path="/sign-out" element={<SignOut setUser={setUser} />} />

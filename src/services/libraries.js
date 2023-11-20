@@ -1,5 +1,14 @@
 import api from "./apiConfig";
 
+export const getAllLibraries = async () => {
+  try {
+    const response = await api.get("/libraries");
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const getLibrary = async (userId) => {
   try {
     const response = await api.get(`/libraries/${userId}`);
@@ -35,6 +44,15 @@ export const editBookReview = async (libraryId, bookReviewId, reviewData) => {
       `/libraries/${libraryId}/bookReviewEdit/${bookReviewId}`,
       reviewData
     );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteLibrary = async (libraryId) => {
+  try {
+    const response = await api.delete(`/libraries/${libraryId}`);
     return response.data;
   } catch (error) {
     throw error;

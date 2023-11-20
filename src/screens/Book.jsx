@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { getBook } from "../services/books.js";
 import { addBook } from "../services/libraries.js";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 
-function Book({ user }) {
+function Book({ user, libraries }) {
   const [book, setBook] = useState({});
   const navigate = useNavigate();
 
@@ -18,13 +19,40 @@ function Book({ user }) {
     setBook(oneBook);
   }
 
-  async function handleClick() {
+  async function addToLibrary() {
     await addBook(user.id, bookId);
     // [TBU] Make sure to add some user feedback
     console.log("book added");
 
     navigate("/library");
   }
+
+  function handleClick() {
+    user ? addToLibrary() : navigate("/sign-in");
+  }
+
+  let rating = 0;
+  const reviews = [];
+
+  function userFeedback() {
+    let count = 0;
+    let userStars = 0;
+
+    libraries.forEach((library) => {
+      library.books.forEach((libBook) => {
+        if (libBook.book._id === bookId) {
+          reviews.push(libBook.comment);
+          userStars += libBook.stars;
+          count += 1;
+        }
+      });
+    });
+
+    rating = userStars / count;
+    console.log(`average rating = ${rating}`);
+  }
+
+  userFeedback();
 
   return (
     <div>
@@ -38,11 +66,29 @@ function Book({ user }) {
         <p>{book?.weeks}</p>
         <p>{book?.description}</p>
       </div>
+      <ReactStars
+        count={5}
+        size={24}
+        isHalf={true}
+        edit={false}
+        value={rating}
+        emptyIcon={<i className="far fa-star"></i>}
+        halfIcon={<i className="fa fa-star-half-alt"></i>}
+        fullIcon={<i className="fa fa-star"></i>}
+        activeColor="#ffd700"
+      />
       <div className="book-view-buttons">
         <Link path="">
           <button>Buy</button>
         </Link>
         <button onClick={handleClick}>Add to Library</button>
+      </div>
+      <div className="reviews">
+        <ul>
+          {reviews.map((review) => (
+            <li>{review}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
