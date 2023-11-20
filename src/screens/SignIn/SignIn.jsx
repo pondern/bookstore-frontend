@@ -53,6 +53,7 @@ const SignIn = ({ setUser }) => {
   const { username, password } = form;
 
   return (
+    <div className="pageContainer">
     <div className="form-container">
       <h3>Sign In</h3>
       <form onSubmit={onSignIn}>
@@ -77,6 +78,7 @@ const SignIn = ({ setUser }) => {
         {renderError()}
         <a href="/users/sign-up">Create Account</a>
       </form>
+    </div>
     </div>
   );
 };

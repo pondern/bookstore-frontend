@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { getBooks } from '../services/books.js';
 import Book from '../components/BookScroll.jsx';
 import BookScroll from '../components/BookScroll.jsx';
+import { Link } from "react-router-dom"
 
-function Home() {
+
+function Home({ book }) {
   const [books, setBooks] = useState([]);
 
 const fictionBooks = books.filter(
@@ -26,31 +28,32 @@ const mangaBooks = books.filter(
     setBooks(allBooks);
   }
 
-
-
   
   return (
     <div>
       <div>
       <div className="test">
-        <h1>Welcome</h1>
+        <h2 className="title">Welcome</h2>
       </div>
       <div className='book-reviews-container'>
       <h2 className='staff-picks'>Staff Picks</h2>
       <div className='book-reviews'>
         <div className='book-1'>
-          <img
+          <Link to="/655668c407f62b913b6cb523">
+            <img 
             src='https://storage.googleapis.com/du-prd/books/images/9781974710027.jpg'
             alt='manga'
-          />
+          /></Link>
           <p className='book-1-p'>"Yuji Itadori is resolved to save the world from cursed demons, but he soon learns that the best way to do it is to slowly lose his humanity and become one himself."</p>
         </div>
 
         <div className='book-2'>
+        <Link to="/655668c407f62b913b6cb3fd">
           <img
             src='https://storage.googleapis.com/du-prd/books/images/9781423131892.jpg'
             alt='children'
           />
+          </Link>
           <p className='book-2-p'>"Twelve-year-old Percy Jackson is on the most dangerous quest of his life. With the help of a satyr and a daughter of Athena, Percy must journey across the United States to catch a thief who has stolen the original weapon of mass destruction — Zeus' master bolt."</p>
         </div>
       </div>
