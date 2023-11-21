@@ -10,10 +10,10 @@ function SavedBook({ savedBook, libId, fetchLibrary, fetchLibraries }) {
     fetchLibraries();
   };
 
-  let prompt = "Leave a review:";
+  let prompt = "Leave a review: ";
 
   if (savedBook.comment) {
-    prompt = "Edit your review:";
+    prompt = "Edit your review: ";
   }
 
   const handleSubmit = (e) => {
@@ -37,37 +37,50 @@ function SavedBook({ savedBook, libId, fetchLibrary, fetchLibraries }) {
     console.log("book removed");
   }
 
+  const title = savedBook.book.title
+    .toLowerCase()
+    .split(" ")
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(" ");
+
   return (
     <div className="savedBook">
-      <img
-        className="lib-img"
-        src={savedBook.book.book_image}
-        alt={savedBook.book.title}
-      />
-      <div>
-        <ReactStars
-          count={5}
-          value={savedBook.stars}
-          onChange={ratingChanged}
-          size={24}
-          activeColor="#ffd700"
-        />
-      </div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <label>
-            {prompt}
-            <input
-              type="text"
-              name="review"
-              value={review}
-              onChange={handleChange}
+      <img className="lib-img" src={savedBook.book.book_image} alt={title} />
+      <div className="lib-book-body">
+        <div className="lib-book-heading">
+          <p className="lib-book-title">{title}</p>
+          <p>{savedBook.book.author}</p>
+        </div>
+        <div className="lib-book-middle">
+          <div>
+            <ReactStars
+              count={5}
+              value={savedBook.stars}
+              onChange={ratingChanged}
+              size={24}
+              activeColor="#ffd700"
             />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        <p>{savedBook.comment}</p>
-        <button onClick={handleClick}>Remove from Library</button>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <label>
+              {prompt}
+              <input
+                className="review-input-box"
+                type="text"
+                name="review"
+                value={review}
+                onChange={handleChange}
+              />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+        <div className="lib-book-bottom">
+          <p className="review">{savedBook.comment}</p>
+          <div className="delete-book">
+            <button onClick={handleClick}>Remove from Library</button>
+          </div>
+        </div>
       </div>
     </div>
   );

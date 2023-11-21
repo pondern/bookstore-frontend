@@ -32,8 +32,8 @@ function Library({ user, fetchLibraries }) {
   }
 
   return (
-    <div>
-      <h1>My Library</h1>
+    <div className="library">
+      <h1 className="section-heading">My Library</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -49,7 +49,9 @@ function Library({ user, fetchLibraries }) {
           ))}
         </div>
       )}
-      <button onClick={handleClick}>Delete My Account</button>
+      <button className="delete-account-btn" onClick={handleClick}>
+        Delete My Account
+      </button>
     </div>
   );
 }
