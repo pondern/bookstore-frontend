@@ -32,7 +32,7 @@ function Library({ user, fetchLibraries }) {
   }
 
   return (
-    <div>
+    <div className="library">
       <h1>My Library</h1>
       {loading ? (
         <p>Loading...</p>
