@@ -158,6 +158,10 @@ body {
   background-color: lightblue;
 }
 
+.book-view-buttons {
+  margin-top: 20px;
+}
+
 .book-reviews {
   display: flex;
   justify-content: center;
@@ -428,6 +432,25 @@ h5 {
   color: gray;
 }
 
+.reviews-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+.review-item {
+  margin-top: 10px;
+  padding: 10px;
+  width: fit-content;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #333;
+  font-size: large;
+  font-style: italic;
+  background-color: #eee;
+  border: solid 2px cornflowerblue;
+  border-radius: 5px;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -494,6 +517,7 @@ text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue,
 .flexCont {
   display: flex;
   gap: 20px;
+  margin-bottom: 15px;
 }
 
 .single-book-view {
