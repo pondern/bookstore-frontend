@@ -339,7 +339,17 @@ h5 {
   background: #af4448;
 }
 
+.library {
+  text-align: center;
+}
+
+.library-heading {
+  margin-top: 25px;
+  font-size: 3em;
+}
+
 .savedBook {
+  text-align: left;
   display: grid;
   grid-template-columns: 175px 1fr;
   margin: 20px;
@@ -394,6 +404,14 @@ h5 {
   display: flex;
   justify-content: flex-end;
   align-items: end;
+}
+
+.delete-account-btn {
+  margin: 20px;
+  float: right;
+  border: none;
+  background-color: white;
+  color: gray;
 }
 
 .modal-overlay {
