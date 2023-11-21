@@ -64,37 +64,49 @@ function Book({ user, libraries }) {
           </div>
           <div className="bookDetails">
             <h1 className="bookTitle">{book?.title}</h1>
-            <p><strong>Author:</strong> {book?.author}</p>
-            <p><strong>Publisher:</strong> {book?.publisher}</p>
+            <p>
+              <strong>Author:</strong> {book?.author}
+            </p>
+            <p>
+              <strong>Publisher:</strong> {book?.publisher}
+            </p>
             <p>{book?.date}</p>
-            <p><strong>Rank:</strong> {book?.rank}</p>
+            <p>
+              <strong>Rank:</strong> {book?.rank}
+            </p>
             <p>{book?.weeks}</p>
-            <p><strong>Description:</strong> {book?.description}</p>
+            <p>
+              <strong>Description:</strong> {book?.description}
+            </p>
           </div>
         </div>
-      
-      <ReactStars
-        count={5}
-        size={24}
-        isHalf={true}
-        edit={false}
-        value={rating}
-        emptyIcon={<i className="far fa-star"></i>}
-        halfIcon={<i className="fa fa-star-half-alt"></i>}
-        fullIcon={<i className="fa fa-star"></i>}
-        activeColor="#ffd700"
-      />
-      <div className="book-view-buttons">
-        <button className="btn" onClick={() => setModal(true)}>Buy</button>
-        <button className="btn" onClick={handleClick}>Add to Library</button>
-      </div>
-      <div className="reviews">
-        <ul>
-          {reviews.map((review) => (
-            <li>{review}</li>
-          ))}
-        </ul>
-      </div>
+
+        <ReactStars
+          count={5}
+          size={24}
+          isHalf={true}
+          edit={false}
+          value={rating}
+          emptyIcon={<i className="far fa-star"></i>}
+          halfIcon={<i className="fa fa-star-half-alt"></i>}
+          fullIcon={<i className="fa fa-star"></i>}
+          activeColor="#ffd700"
+        />
+        <div className="book-view-buttons">
+          <button className="btn" onClick={() => setModal(true)}>
+            Buy
+          </button>
+          <button className="btn" onClick={handleClick}>
+            Add to Library
+          </button>
+        </div>
+        <div className="reviews">
+          <ul className="reviews-list">
+            {reviews.map((review) => (
+              <li className="review-item">{review}</li>
+            ))}
+          </ul>
+        </div>
       </div>
       {modal && (
         <div>
@@ -125,6 +137,3 @@ function Book({ user, libraries }) {
 }
 
 export default Book;
-
-
-
