@@ -10,13 +10,7 @@ The Bookstore API is an interactive collection of The New York Times bestseller 
 
 ![Home Page](<Screenshot 2023-11-21 at 5.57.29 PM.png>)
 
-<<<<<<< HEAD
 ### Browse Page
-=======
-The page will reload when you make changes.\![Screenshot 2023-11-21 at 5 49 23 PM](https://github.com/pondern/bookstore-frontend/assets/76927865/b474f8d2-e635-4e4c-9f70-65676b8ed39a)
-
-You may also see any lint errors in the console.
->>>>>>> 54b9faa5c402678e26faab9cb555a9c0e2d96ede
 
 ![Browse Page](<Screenshot 2023-11-21 at 6.16.37 PM.png>)
 
