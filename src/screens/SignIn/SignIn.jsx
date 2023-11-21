@@ -77,7 +77,9 @@ const SignIn = ({ setUser }) => {
             onChange={handleChange}
           />
           {renderError()}
-          <Link to="/sign-up">Create Account</Link>
+          <Link to="/sign-up"> 
+        <button>Create Account</button>
+        </Link>
         </form>
       </div>
     </div>
