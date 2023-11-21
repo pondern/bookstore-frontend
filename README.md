@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+## Link to [BestBooks](https://main--ga-bookstore.netlify.app/) live site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Bookstore API is an interactive collection of The New York Times bestseller books that allows anyone to browse the collection. A user can also sign up for an account and log in to add, edit, or delete a book from there library. A user can also choose to purchase a book from a selection of buying options.
 
-In the project directory, you can run:
+## Pages
 
-### `npm start`
+### Home Page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Home Page](<Screenshot 2023-11-21 at 5.57.29 PM.png>)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Browse Page
 
-### `npm test`
+![Browse Page](<Screenshot 2023-11-21 at 6.16.37 PM.png>)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Detail Page
 
-### `npm run build`
+![Detail Page](<Screenshot 2023-11-21 at 6.25.01 PM.png>)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Add Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Add Page](<Screenshot 2023-11-21 at 6.21.18 PM.png>)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Sign-Up Page
 
-### `npm run eject`
+![Sign-Up Page](<Screenshot 2023-11-21 at 6.21.44 PM.png>)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Sign-In Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Sign-In Page](<Screenshot 2023-11-21 at 6.22.03 PM.png>)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Schema
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Book Schema:
 
-## Learn More
+```javascript
+const Schema = mongoose.Schema;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+let BookSchema = new Schema({
+  title: { type: String },
+  author: { type: String },
+  book_image: { type: String },
+  publisher: { type: String },
+  description: { type: String },
+  buy_links: [
+    {
+      name: { type: String },
+      url: { type: String },
+    },
+  ],
+  rank: { type: Number },
+  weeks_on_list: { type: Number },
+  display_name: { type: String },
+});
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+export default mongoose.model("books", BookSchema);
+```
 
-### Code Splitting
+### User Schema:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
+const Schema = mongoose.Schema;
 
-### Analyzing the Bundle Size
+const UserSchema = new Schema({
+  username: { type: String, required: true },
+  email: { type: String, required: true },
+  password_digest: { type: String, required: true, select: false },
+});
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+export default mongoose.model("users", UserSchema);
+```
 
-### Making a Progressive Web App
+### Library Schema:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```javascript
+const Schema = mongoose.Schema;
 
-### Advanced Configuration
+let LibrarySchema = new Schema({
+  books: [
+    {
+      book: { type: Schema.Types.ObjectId, ref: "books" },
+      stars: { type: Number, min: 1, max: 5 },
+      comment: { type: String },
+    },
+  ],
+  userId: { type: Schema.Types.ObjectId, ref: "users" },
+});
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+export default mongoose.model("libraries", LibrarySchema);
+```
 
-### Deployment
+## Team Expectations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Link to [Team Expectations Document](https://docs.google.com/document/d/1CJgyx3Nu_gRJJMGRL7gkoh9v1o5vb2Zb0RJvfQYLnng/edit)
 
-### `npm run build` fails to minify
+Link to [Project Outline](https://docs.google.com/document/d/1WMG7CX3tmeAdju4malt2lE7Vz8K2oUcaGM85A9WGWhY/edit)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Project Schedule
+
+| Day   | Goal                                                                       |
+| ----- | -------------------------------------------------------------------------- |
+| 11/13 | Create repo, brainstorm idea & get approval                                |
+| 11/14 | Finish readme, wireframe, Start building back-end                          |
+| 11/15 | Continue working on back-end                                               |
+| 11/16 | Finish working on back-end and deploy                                      |
+| 11/17 | AM: Discuss delegating tasks, PM: Begin working on individual components   |
+| 11/18 | Work on individual front-end components                                    |
+| 11/19 | Work on individual front-end components and styling                        |
+| 11/20 | Deploy front-end and have all major aspects of project completed, fix bugs |
+| 11/21 | AM: Fix any remaing bugs, PM: Presentation                                 |
+
+## MVP
+
+- Home page displaying some of the books in the library
+- Browse page getting and showing all books in the library
+- Book detail page showing the title, author, genre, cover, and description of the book
+- Sign up page to create an account
+- Sign in page to sign into your account
+- Add a book page to add a book to the user library
+- Edit review of a book in user library
+- Remove a book button to delete a book from the user library
+- Sort books by alphabetically by title, author (post-MVP)
+- Carousel of favorite books of class (post-MVP)
+- Personalized book list per user (post-MVP)
+- Recommended other books based on genre (post-MVP)
+
+## Disclaimer
+
+This API is created for educational purposes and does not claim official affiliation or endorsement by The New York Times
+
+## Contact
+
+For any questions or concerns, please [open an issue](https://github.com/pondern/bookstore-frontend/issues) in this repository.
