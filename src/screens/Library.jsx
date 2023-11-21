@@ -33,7 +33,7 @@ function Library({ user, fetchLibraries }) {
 
   return (
     <div className="library">
-      <h1 className="library-heading">My Library</h1>
+      <h1 className="section-heading">My Library</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (

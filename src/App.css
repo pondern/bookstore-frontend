@@ -124,6 +124,10 @@ body {
   flex-wrap: wrap;
 }
 
+.grid-body {
+  text-align: center;
+}
+
 .thumbnail-container {
   height: 300px;
   width: 300px;
@@ -352,7 +356,7 @@ h5 {
   text-align: center;
 }
 
-.library-heading {
+.section-heading {
   margin-top: 25px;
   font-size: 3em;
 }
