@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Bookstore API is an interactive collection of The New York Times bestseller books that allows anyone to browse the collection. A user can also sign up for an account and log in to add, edit, or delete a book from there library. A user can also choose to purchase a book from a selection of buying options.
+BestBooks is an interactive collection of The New York Times bestseller books that allows anyone to browse the collection. A user can also sign up for an account and log in to add, edit, or delete a book from there library. A user can also choose to purchase a book from a selection of buying options.
 
 ## Pages
 
