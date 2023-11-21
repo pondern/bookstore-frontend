@@ -86,7 +86,7 @@ function NavBar({ user, thumbnails, setFilteredThumbnails, setGridHeading }) {
     <nav className="navbar">
       <div className="left-section">
         <NavLink to="/">
-          <span className="Name">The Bookstore</span>
+          <span className="Name">BestBooks</span>
         </NavLink>
       </div>
       <div className="middle-section">
