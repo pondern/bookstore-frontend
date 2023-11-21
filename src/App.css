@@ -88,6 +88,7 @@ body {
 .dropdown {
   position: relative;
   background-color: #333;
+  margin-right: 3em;
 }
 
 .dropdown-content {
@@ -96,6 +97,11 @@ body {
   background-color: #333;
   min-width: 160px;
   z-index: 1;
+  list-style-type: none;
+}
+
+.dropdown-content li {
+  margin: 10px;
 }
 
 .dropdown-content a {
