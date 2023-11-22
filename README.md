@@ -8,27 +8,27 @@ BestBooks is an interactive collection of The New York Times bestseller books th
 
 ### Home Page
 
-![Home Page](<Screenshot 2023-11-21 at 5.57.29 PM.png>)
+![Home Page](<screenshots/Screenshot 2023-11-21 at 5.57.29 PM.png>)
 
 ### Browse Page
 
-![Browse Page](<Screenshot 2023-11-21 at 6.16.37 PM.png>)
+![Browse Page](<screenshots/Screenshot 2023-11-21 at 6.16.37 PM.png>)
 
 ### Detail Page
 
-![Detail Page](<Screenshot 2023-11-21 at 6.25.01 PM.png>)
+![Detail Page](<screenshots/Screenshot 2023-11-21 at 6.25.01 PM.png>)
 
 ### Add Page
 
-![Add Page](<Screenshot 2023-11-21 at 6.21.18 PM.png>)
+![Add Page](<screenshots/Screenshot 2023-11-21 at 6.21.18 PM.png>)
 
 ### Sign-Up Page
 
-![Sign-Up Page](<Screenshot 2023-11-21 at 6.21.44 PM.png>)
+![Sign-Up Page](<screenshots/Screenshot 2023-11-21 at 6.21.44 PM.png>)
 
 ### Sign-In Page
 
-![Sign-In Page](<Screenshot 2023-11-21 at 6.22.03 PM.png>)
+![Sign-In Page](<screenshots/Screenshot 2023-11-21 at 6.22.03 PM.png>)
 
 ## Schema
 
